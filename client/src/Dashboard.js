@@ -5,18 +5,21 @@ import TrackSearchResult from "./TrackSearchResult"
 import { Container, Form } from "react-bootstrap"
 import SpotifyWebApi from "spotify-web-api-node"
 import axios from "axios"
+import Header from "./Header"
+
 
 const spotifyApi = new SpotifyWebApi({
   clientId: "debf6540ddc74edfabe88fa07b71ed37",
 })
 
-export default function Dashboard({ code }) {
-  const accessToken = useAuth(code)
+export default function Dashboard({ accessToken }) {
+  // const accessToken = useAuth(code)
   const [search, setSearch] = useState("")
   const [searchResults, setSearchResults] = useState([])
   const [playingTrack, setPlayingTrack] = useState()
   const [lyrics, setLyrics] = useState("")
-
+  
+  
   function chooseTrack(track) {
     setPlayingTrack(track)
     setSearch("")
@@ -72,7 +75,7 @@ export default function Dashboard({ code }) {
 
     return () => (cancel = true)
   }, [search, accessToken])
-
+  
   return (
   
     <Container className="d-flex flex-column py-2" style={{ height: "100vh" }}>
@@ -100,6 +103,7 @@ export default function Dashboard({ code }) {
       <div>
         <Player accessToken={accessToken} trackUri={playingTrack?.uri} />
       </div>
+
     </Container>
  
   )

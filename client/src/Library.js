@@ -1,6 +1,17 @@
+import { Avatar } from "@material-ui/core"
+import useAuth from "./useAuth"
+import Header from "./Header"
 
-export default function Library() {
+  
+
+export default function Library({ accessToken }) {
+ 
+
     return(
-        <h1> User Library</h1>
+        <div>
+            <Header accessToken={accessToken} />
+            <h1> User Library</h1>
+           
+      </div>
     )
 }

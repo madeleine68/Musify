@@ -2,13 +2,19 @@ import { Routes, Route, Outlet, Link, BrowserRouter } from "react-router-dom"
 import Library from "./Library"
 import Dashboard from "./Dashboard"
 import { Tabs, Tab } from "react-bootstrap"
+
+import useAuth from "./useAuth"
+
+
 export default function Home ({ code }) {
+    const accessToken = useAuth(code)
     return (
 
         <BrowserRouter>
-            <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
+            
+            <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="m-3" >
                 <Tab eventKey="library" title="Library">
-                    <Library />
+                    <Library accessToken={accessToken}/>
                 </Tab>
                 <Tab eventKey="dashboard" title="Dashboard">
                     <Dashboard  code={code}/>
