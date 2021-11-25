@@ -1,3 +1,4 @@
+PORT = 3001;
 require("dotenv").config()
 const express = require("express")
 const cors = require("cors")
@@ -59,5 +60,7 @@ app.get("/lyrics", async (req, res) => {
     (await lyricsFinder(req.query.artist, req.query.track)) || "No Lyrics Found"
   res.json({ lyrics })
 })
-
-app.listen(3001)
+// app.get("/library", (req, res) => {
+//   res.json({})
+// })
+app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));

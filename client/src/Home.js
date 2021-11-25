@@ -13,7 +13,8 @@ const spotifyApi = new SpotifyWebApi({
 
   
   export default function Home ({ code }) {
-    const [tracks, setTracks] = useState(null)  
+    const [tracks, setTracks] = useState(null)
+    const [recent, setRecent] = useState(null)   
     const accessToken = useAuth(code)
     const headers = { 
         Authorization: `Bearer ${accessToken}`,
@@ -25,13 +26,19 @@ const spotifyApi = new SpotifyWebApi({
         .catch((err) => console.log(err))
     
     }, [accessToken])
+    useEffect (() => {
+        axios.get('https://api.spotify.com/v1/me/player/recently-played', { headers })
+        .then(res => setRecent(res.data.items))
+        .catch((err) => console.log(err))
+    }, [accessToken])
+    console.log(recent)
 
     return (
 
         <BrowserRouter>   
             <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="m-3" >
                 <Tab eventKey="library" title="Library">
-                    <Library accessToken={accessToken} spotifyApi={spotifyApi} tracks={tracks}/>
+                    <Library accessToken={accessToken} spotifyApi={spotifyApi} tracks={tracks} recent={recent}/>
                 </Tab>
                 <Tab eventKey="dashboard" title="Dashboard">
                     <Dashboard  accessToken={accessToken}/>
