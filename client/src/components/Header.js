@@ -1,22 +1,14 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Avatar } from "@material-ui/core";
-import SpotifyWebApi from "spotify-web-api-node";
-import useAuth from "./useAuth";
+import { Container, Navbar } from "react-bootstrap"
 
 
-
-const spotifyApi = new SpotifyWebApi({
-    clientId: "debf6540ddc74edfabe88fa07b71ed37",
-  })
-
-function Header({ accessToken }) {
-
-    
+function Header({ accessToken, spotifyApi }) {
+  
     const [user, setUser] = useState({
       display_name: "",
       images: [],
     });
-  
     // * This will set the accessToken to the spotify api
     useEffect(() => {
       if (!accessToken) return;
@@ -32,12 +24,15 @@ function Header({ accessToken }) {
 
   
     return (
-      <div >
-       
-          <Avatar src={user?.images[0]?.url} alt={user?.display_name} />
-          <h4>{user?.display_name}</h4>
-        
-      </div>
+      <Navbar className="me-auto" bg="light" >
+          <Container>  
+           <Navbar.Brand>
+                <Avatar src={user?.images[0]?.url} alt={user?.display_name} />
+                <h5>{user?.display_name}</h5>
+            </Navbar.Brand>
+          </Container>
+          
+      </Navbar>
     );
   }
   
