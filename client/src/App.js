@@ -9,7 +9,7 @@ function App() {
  
   return (
     <div>
-         {code ? <Home code={code} /> : <Login />}
+         {code ? <Home style={{background: 'blue'}} code={code} /> : <Login />}
     </div>
     )   
 }
