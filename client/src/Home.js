@@ -2,6 +2,7 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom"
 import Library from "./components/Library"
 import Dashboard from "./Dashboard"
+import Chart from "./components/Chart"
 import { Tabs, Tab } from "react-bootstrap"
 import SpotifyWebApi from "spotify-web-api-node";
 import { useAuth } from "./useAuth"
@@ -17,8 +18,7 @@ const spotifyApi = new SpotifyWebApi({
     const [recent, setRecent] = useState(null)
     const [trackIds, setTrackIds] = useState([])
     const [statTrack, setStatTrack] = useState([])
-    const [stats, setStats] = useState(null)
-	const [loading, setLoading] = useState(false)
+   
 
     const accessToken = useAuth(code)
 
@@ -47,7 +47,6 @@ const spotifyApi = new SpotifyWebApi({
          })
         .catch((err) => console.log(err))
     },[accessToken])
-
     useEffect (() => {
         axios.get("https://api.spotify.com/v1/audio-features", {
         headers: {
@@ -63,49 +62,28 @@ const spotifyApi = new SpotifyWebApi({
 
     }, [trackIds])
     // console.log(stat)
-    useEffect(() => {
-		const buildStats = () => {
-			if (statTrack.length > 0) {
-				const _stats = {
-					acousticness: calcAverageStat('acousticness'),
-					danceability: calcAverageStat('danceability'),
-					energy: calcAverageStat('energy'),
-					instrumentalness: calcAverageStat('instrumentalness'),
-					valence: calcAverageStat('valence'),
-				}
-
-				setStats(_stats)
-				setLoading(false)
-			}
-		}
-
-		buildStats()
-	}, [statTrack])
-
-	const calcAverageStat = stat => {
-		let statTotal = 0
-
-		statTrack.forEach(track => {
-			statTotal += track[stat]
-		})
-
-		return Math.round((statTotal / statTrack.length) * 1000) / 100
-	}
+   
 
     return (
         <BrowserRouter >   
             <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="m-3" >
+                
+                <Tab eventKey="dashboard" title="Dashboard">
+                    <Dashboard  accessToken={accessToken}/>
+                </Tab>
                 <Tab eventKey="library" title="Library">
                     <Library accessToken={accessToken} spotifyApi={spotifyApi} tracks={tracks} recent={recent}/>
                 </Tab>
-                <Tab eventKey="dashboard" title="Dashboard">
-                    <Dashboard  accessToken={accessToken}/>
+                
+                <Tab eventKey="chart" title="Chart">
+                    <Chart  accessToken={accessToken} statTrack={statTrack} />
                 </Tab>
             </Tabs>
 
          <Routes>
             <Route  path="/library" element={<Library/>} />
-            <Route  path="/Dashboard" element={<Dashboard/>} />
+            <Route  path="/dashboard" element={<Dashboard/>} />
+            <Route  path="/chart" element={<Chart/>} />
          </Routes>
         </BrowserRouter>
     )
