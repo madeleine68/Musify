@@ -18,7 +18,6 @@ const spotifyApi = new SpotifyWebApi({
     const [recent, setRecent] = useState(null)
     const [trackIds, setTrackIds] = useState([])
     const [statTrack, setStatTrack] = useState([])
-   
 
     const accessToken = useAuth(code)
 
@@ -60,9 +59,7 @@ const spotifyApi = new SpotifyWebApi({
         .then(res => setStatTrack(res.data.audio_features))
         .catch((err) => console.log(err))
 
-    }, [trackIds])
-    // console.log(stat)
-   
+    }, [trackIds])   
 
     return (
         <BrowserRouter >   

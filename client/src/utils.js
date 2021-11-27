@@ -1,3 +1,4 @@
+
 export const DoubleCard = ({ imageURL, subItem, itemName }) => {
 	return (
 			<div className="container">
@@ -51,11 +52,11 @@ export const LoadingSpinner = () => {
 
 export const Stats = ({ stats }) => {
 	return (
-		<div className="mx-auto max-w-2xl">
-			<h2 className="text-center font-bold uppercase italic tracking-wider text-xl mb-4">
+		<div className="bar-chart">
+			<h2 >
 				Your Spotify stats:
 			</h2>
-			<div className="p-4 border-white rounded-lg border">
+			<div className="bar-chart" >
 				<StatBar name="Acousticness" stat={stats.acousticness} />
 				<StatBar name="Danceability" stat={stats.danceability} />
 				<StatBar name="Energy" stat={stats.energy} />
@@ -95,3 +96,4 @@ export const StatBar = ({ name, stat }) => {
 		</div>
 	)
 }
+
