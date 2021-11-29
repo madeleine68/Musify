@@ -1,6 +1,9 @@
+import React from "react";
+
 import { useState, useEffect } from "react"
 import { LoadingSpinner, Stats } from '../utils'
 import ApexChart from "./ApexChart"
+//import MainDisplay from "./MainDisplay";
 
 export default function Chart ({ statTrack}) {
 

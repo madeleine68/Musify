@@ -1,3 +1,6 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+
 import "bootstrap/dist/css/bootstrap.min.css"
 import Login from "./Login"
 import Home from "./Home"
@@ -9,7 +12,7 @@ function App() {
  
   return (
     <div>
-         {code ? <Home style={{background: 'blue'}} code={code} /> : <Login />}
+         {code ? <Home code={code} /> : <Login />}
     </div>
     )   
 }

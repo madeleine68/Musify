@@ -1,8 +1,11 @@
 /* eslint-disable */
+import React from 'react'
+import ReactDOM from 'react-dom'
+
 import { Routes, Route, BrowserRouter } from "react-router-dom"
-import Library from "./components/Library"
+import Library from "./Components/Library"
 import Dashboard from "./Dashboard"
-import Chart from "./components/Chart"
+import Chart from "./Components/Chart"
 import { Tabs, Tab } from "react-bootstrap"
 import SpotifyWebApi from "spotify-web-api-node";
 import { useAuth } from "./useAuth"

@@ -1,3 +1,6 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+
 import { useState, useEffect } from "react"
 import SpotifyPlayer from "react-spotify-web-playback"
 

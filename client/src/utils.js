@@ -1,3 +1,4 @@
+import React from "react";
 
 export const DoubleCard = ({ imageURL, subItem, itemName }) => {
 	return (
