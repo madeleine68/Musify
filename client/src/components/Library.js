@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import Footer from "./Footer"
 
 
+
 export default function Library({ accessToken, spotifyApi, tracks, convertMS, recent  }) {
 
     return(
@@ -20,6 +21,11 @@ export default function Library({ accessToken, spotifyApi, tracks, convertMS, re
                         <DoubleCard imageURL={track.album.images[1].url} itemName={track.name} subItem={track.artists}/>
                     </Link>      
                 )}
+            </div>
+            <div>
+            <a class="fancyButton" >
+                    <button class="next" id="enter"><span>Load More</span></button>
+                    </a>
             </div>
         </div>  
 
@@ -40,6 +46,12 @@ export default function Library({ accessToken, spotifyApi, tracks, convertMS, re
 						
 					    </div>
 					</div>
+                    <a class="fancyButton">
+                    <button class="next" id="enter"><span>Load More</span></button>
+                    </a>
+                    <div>
+
+                    </div>
 			<Footer/>
       </div>
 			
