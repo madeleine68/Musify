@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 import Login from "./Login"
 import Home from "./Home"
-import Footer from "./Components/Footer"
+
 
 
 

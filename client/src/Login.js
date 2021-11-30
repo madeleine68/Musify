@@ -8,7 +8,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import { Container } from "react-bootstrap"
-import SubmitButton from "./Components/SubmitButton";
+
 import Col from "react-bootstrap/Col";
 import SoundWave from "./Components/SoundWave.js";
 import Fade from "react-reveal/Fade";
