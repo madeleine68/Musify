@@ -3,11 +3,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import { Routes, Route, BrowserRouter } from "react-router-dom"
-import Library from "./Components/Library"
+import Library from "./components/Library"
 import Dashboard from "./Dashboard"
-import Chart from "./Components/Chart"
+import Chart from "./components/Chart"
 import { Tabs, Tab } from "react-bootstrap"
-import Loading from "./Components/Loading"
+import Loading from "./components/Loading"
 import SpotifyWebApi from "spotify-web-api-node";
 import { useAuth } from "./useAuth"
 import { useState, useEffect } from "react"

@@ -10,7 +10,7 @@ import ReactDOM from 'react-dom'
 import { Container } from "react-bootstrap"
 
 import Col from "react-bootstrap/Col";
-import SoundWave from "./Components/SoundWave.js";
+import SoundWave from "./components/SoundWave.js";
 import Fade from "react-reveal/Fade";
 
 const AUTH_URL =

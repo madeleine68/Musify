@@ -6,10 +6,10 @@ import TrackSearchResult from "./TrackSearchResult"
 import { Container, Form } from "react-bootstrap"
 import SpotifyWebApi from "spotify-web-api-node"
 import axios from "axios"
-import Loading from "./Components/Loading"
+import Loading from "./components/Loading"
 import cassette from "./Assets/cassette.gif";
 import Fade from "react-reveal/Fade"; 
-import Footer from "./Components/Footer"
+import Footer from "./components/Footer"
 
 const spotifyApi = new SpotifyWebApi({
   clientId: "debf6540ddc74edfabe88fa07b71ed37",
