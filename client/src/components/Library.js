@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import Header from "./Header"
 import { DoubleCard, TrackItem } from '../utils'
 import { Link } from 'react-router-dom'
 import Footer from "./Footer"
+import LoadMore from './LoadMore'
 
 
+<<<<<<< HEAD
 
 export default function Library({ accessToken, spotifyApi, tracks, convertMS, recent  }) {
+=======
+export default function Library({ accessToken, spotifyApi, tracks, recent  }) {
+	const [limit, setLimit] = useState (3)
+>>>>>>> loadmore
 
+    const loadMore = () => {
+        setLimit(limit+3)
+    }
     return(
         <div>
         <Header accessToken={accessToken} spotifyApi={spotifyApi}/>
@@ -16,11 +25,12 @@ export default function Library({ accessToken, spotifyApi, tracks, convertMS, re
         <div>
             <h3 id="headerTitle">Your favourite songs </h3> 
             <div className="grid-container grid">
-                { tracks && tracks.map(track => 
+                { tracks && tracks.slice(0,limit ? limit:limit.length).map(track => 
                     <Link to={`/track/${track.id}`} key={track.id}  className= "grid-item">
                         <DoubleCard imageURL={track.album.images[1].url} itemName={track.name} subItem={track.artists}/>
                     </Link>      
                 )}
+			<button onClick={loadMore}> Load More </button>
             </div>
             <div>
             <a class="fancyButton" >
@@ -33,17 +43,16 @@ export default function Library({ accessToken, spotifyApi, tracks, convertMS, re
         		<div>
 						<h3 id="headerTitle" >Recently played tracks</h3>
 						<div className="grid-container grid">
-						
-								{recent && recent.map(song => 
+								{recent && recent.slice(0,limit ? limit:limit.length).map(song => 
 									<div  key={song.played_at}>
 										<div >
 											<Link to={`/track/${song.track.id}`} className= "grid-item">
 												<TrackItem songName={song.track.name} songArtists={song.track.artists} songAlbum={song.track.album.name} picURL={song.track.album.images[1].url}/>
-											</Link>
-										</div>
+											</Link>		
+										</div>		
 									</div>
 								)}
-						
+							<button onClick={loadMore}> Load More </button>
 					    </div>
 					</div>
                     <a class="fancyButton">
