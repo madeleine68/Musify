@@ -4,7 +4,9 @@ import { useState, useEffect } from "react"
 import { LoadingSpinner, Stats } from '../utils'
 import ApexChart from "./ApexChart"
 //import MainDisplay from "./MainDisplay";
-
+import ApexChart2 from "./ApexChart2";
+import Footer from "./Footer"
+//import CardsWrapper from "./Graphs/cardWrapper";
 export default function Chart ({ statTrack}) {
 
     const [stats, setStats] = useState(null)
@@ -51,6 +53,9 @@ export default function Chart ({ statTrack}) {
             </div>
         )}
            <ApexChart stats={stats} />
+					 <ApexChart2 stats={stats} />
+
+					 <Footer/>
         </div>
         
     )

@@ -7,6 +7,7 @@ import Library from "./Components/Library"
 import Dashboard from "./Dashboard"
 import Chart from "./Components/Chart"
 import { Tabs, Tab } from "react-bootstrap"
+import Loading from "./Components/Loading"
 import SpotifyWebApi from "spotify-web-api-node";
 import { useAuth } from "./useAuth"
 import { useState, useEffect } from "react"

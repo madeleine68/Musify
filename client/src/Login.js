@@ -31,7 +31,10 @@ const AUTH_URL =
 /*<SubmitButton
               isLoggedIn={props.isLoggedIn}
               handleLogin={() => props.handleLogin()}
-            />*/
+            />
+            <a class="fancyButton" href={AUTH_URL}>
+                    <button class="next" id="enter"><span>Login With Spotify</span></button>
+                    </a>*/
 function Login(props) {
   if (props.isLoggedIn) {
     return null;
@@ -40,13 +43,12 @@ function Login(props) {
     <Container>
       <Col className="d-flex align-items-center flex-column login justify-content-center login">
         <Fade duration={2000}>
-          <h1> Musify </h1>
+          <h1> Spotifyish </h1>
           <SoundWave />
           <Fade delay={1000}>
           <a class="fancyButton" href={AUTH_URL}>
                     <button class="next" id="enter"><span>Login With Spotify</span></button>
-
-      </a>
+                    </a>
             
           </Fade>
 

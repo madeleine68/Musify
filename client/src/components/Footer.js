@@ -1,32 +1,29 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
+//import Footer from "./src/index.css";
 
 export default function Loading() {
   return (
-    <footer className="mt-2 mb-4">
+    <footer className="mt-2 mb-4" textAlign="center">
       <Fade>
-        <h6>Like what you see?</h6>
-        <h6>
-          Give this project a{" "}
+        <h7>Like what you see? Give this project </h7>
+        <h7>
+           a{" "} 
           <span role="img" aria-label="star emoji">
             🌟
           </span>{" "}
-          on
+          on 
           <a
-            href="https://github.com/Nicholas-Lin/vibe"
+            href="https://github.com/ramanmand/final-project"
             target="_blank"
             rel="noopener noreferrer"
           >
             {" "}
-            Github.
+          Github 
           </a>
-        </h6>
-        <h6>
-          Share it with your friends{" "}
-          <span role="img" aria-label="star emoji">
-            😎
-          </span>
-        </h6>
+         -- and share.
+        </h7>
+       
       </Fade>
     </footer>
   );

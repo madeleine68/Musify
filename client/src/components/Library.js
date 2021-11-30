@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import Header from "./Header"
 import { DoubleCard, TrackItem } from '../utils'
 import { Link } from 'react-router-dom'
+import Footer from "./Footer"
 
 
 export default function Library({ accessToken, spotifyApi, tracks, convertMS, recent  }) {
@@ -43,10 +44,12 @@ export default function Library({ accessToken, spotifyApi, tracks, convertMS, re
 										</div>
 									)}
 								</span>
+								<Footer/>
 							</div>
 						</div>
 					</div>
       </div>
+			
     )
 }
 

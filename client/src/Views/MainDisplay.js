@@ -8,7 +8,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import VibeDashboard from "../Components/Vibe/VibeDashboard";
 import MoodDashboard from "../Components/Mood/MoodDashboard";
-import Loading from "../Components/Loading";
+//import Loading from "../Components/Loading";
 import FavoritesDisplay from "../Components/Favorites/FavoritesDisplay";
 import Footer from "../Components/Footer";
 

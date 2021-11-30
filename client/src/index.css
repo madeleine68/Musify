@@ -652,5 +652,10 @@ footer p {
       font-size: 15px;
   }
 
-
+  .Footer{
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+  }
+  
 }

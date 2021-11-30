@@ -6,7 +6,10 @@ import TrackSearchResult from "./TrackSearchResult"
 import { Container, Form } from "react-bootstrap"
 import SpotifyWebApi from "spotify-web-api-node"
 import axios from "axios"
-
+import Loading from "./Components/Loading"
+import cassette from "./Assets/cassette.gif";
+import Fade from "react-reveal/Fade"; 
+import Footer from "./Components/Footer"
 
 const spotifyApi = new SpotifyWebApi({
   clientId: "debf6540ddc74edfabe88fa07b71ed37",
@@ -99,12 +102,31 @@ export default function Dashboard({ accessToken }) {
           </div>
         )}
       </div>
+      <div
+      style={{
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Fade>
+        <img
+          src={cassette}
+          style={{ maxHeight: "20vh", maxWidth: "30vw" }}
+          alt="Cassette spinning loading animation"
+        />
+        <h3>Playing now...</h3>
+      </Fade>
+
+    </div>
 
       <div>
         <Player accessToken={accessToken} trackUri={playingTrack?.uri} />
       </div>
-
+<Footer/>
     </Container>
- 
+    
   )
 }
