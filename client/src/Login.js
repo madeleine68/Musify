@@ -40,11 +40,12 @@ function Login(props) {
     <Container>
       <Col className="d-flex align-items-center flex-column login justify-content-center login">
         <Fade duration={2000}>
-          <header> Musify </header>
+          <h1> Musify </h1>
           <SoundWave />
           <Fade delay={1000}>
-          <a className="btn btn-success btn-lg" href={AUTH_URL}>
-        Login With Spotify
+          <a class="fancyButton" href={AUTH_URL}>
+                    <button class="next" id="enter"><span>Login With Spotify</span></button>
+
       </a>
             
           </Fade>
