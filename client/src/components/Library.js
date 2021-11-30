@@ -12,42 +12,35 @@ export default function Library({ accessToken, spotifyApi, tracks, convertMS, re
         <div>
         <Header accessToken={accessToken} spotifyApi={spotifyApi}/>
         {/* favorite songs */}
-        <div className='mt-12'>
-            <h5 style={{padding:"40px"}}>Your favourite songs </h5> 
-            <div className='grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-5'>
+        <div>
+            <h3 id="headerTitle">Your favourite songs </h3> 
+            <div className="grid-container grid">
                 { tracks && tracks.map(track => 
-                    <Link to={`/track/${track.id}`} key={track.id}>
-                        <DoubleCard imageURL={track.album.images[2].url} itemName={track.name} subItem={track.artists}/>
+                    <Link to={`/track/${track.id}`} key={track.id}  className= "grid-item">
+                        <DoubleCard imageURL={track.album.images[1].url} itemName={track.name} subItem={track.artists}/>
                     </Link>      
                 )}
             </div>
         </div>  
 
         {/* recently played */}
-        <div>
-						<h5 style={{padding:"40px"}} >Recently played tracks</h5>
-						<div >
-							<div>
-								<div>
-									{/* <div>TRACK</div>
-									<div>ALBUM</div>
-									<div>DURATION</div> */}
-								</div>
-								<span >
-									{recent && recent.map(song => 
-										<div  key={song.played_at}>
-											<div >
-												<Link to={`/track/${song.track.id}`}>
-													<TrackItem songName={song.track.name} songArtists={song.track.artists} songAlbum={song.track.album.name} picURL={song.track.album.images[2].url}/>
-												</Link>
-											</div>
+        		<div>
+						<h3 id="headerTitle" >Recently played tracks</h3>
+						<div className="grid-container grid">
+						
+								{recent && recent.map(song => 
+									<div  key={song.played_at}>
+										<div >
+											<Link to={`/track/${song.track.id}`} className= "grid-item">
+												<TrackItem songName={song.track.name} songArtists={song.track.artists} songAlbum={song.track.album.name} picURL={song.track.album.images[1].url}/>
+											</Link>
 										</div>
-									)}
-								</span>
-								<Footer/>
-							</div>
-						</div>
+									</div>
+								)}
+						
+					    </div>
 					</div>
+			<Footer/>
       </div>
 			
     )
