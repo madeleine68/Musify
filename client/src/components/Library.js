@@ -4,17 +4,10 @@ import Header from "./Header"
 import { DoubleCard, TrackItem } from '../utils'
 import { Link } from 'react-router-dom'
 import Footer from "./Footer"
-import LoadMore from './LoadMore'
 
-
-<<<<<<< HEAD
-
-export default function Library({ accessToken, spotifyApi, tracks, convertMS, recent  }) {
-=======
 export default function Library({ accessToken, spotifyApi, tracks, recent  }) {
-	const [limit, setLimit] = useState (3)
->>>>>>> loadmore
 
+	const [limit, setLimit] = useState(3)
     const loadMore = () => {
         setLimit(limit+3)
     }
@@ -30,12 +23,7 @@ export default function Library({ accessToken, spotifyApi, tracks, recent  }) {
                         <DoubleCard imageURL={track.album.images[1].url} itemName={track.name} subItem={track.artists}/>
                     </Link>      
                 )}
-			<button onClick={loadMore}> Load More </button>
-            </div>
-            <div>
-            <a class="fancyButton" >
-                    <button class="next" id="enter"><span>Load More</span></button>
-                    </a>
+			<button class="fancyButton" onClick={loadMore}> Load More </button>
             </div>
         </div>  
 
@@ -52,15 +40,9 @@ export default function Library({ accessToken, spotifyApi, tracks, recent  }) {
 										</div>		
 									</div>
 								)}
-							<button onClick={loadMore}> Load More </button>
+							<button class="fancyButton" onClick={loadMore}> Load More </button>
 					    </div>
 					</div>
-                    <a class="fancyButton">
-                    <button class="next" id="enter"><span>Load More</span></button>
-                    </a>
-                    <div>
-
-                    </div>
 			<Footer/>
       </div>
 			
