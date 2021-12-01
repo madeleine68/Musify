@@ -40,7 +40,7 @@ function Login(props) {
     return null;
   }
   return (
-    <Container>
+    <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh" }}>
       <Col className="d-flex align-items-center flex-column login justify-content-center login">
         <Fade duration={2000}>
           <h1> Spotifyish </h1>

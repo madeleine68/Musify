@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom'
 import Header from "./Header"
 import { DoubleCard, TrackItem } from '../utils'
 import { Link } from 'react-router-dom'
-import Footer from "./Footer"
+
 
 export default function Library({ accessToken, spotifyApi, tracks, recent  }) {
 
-	const [limit, setLimit] = useState(3)
+	const [limitTop, setLimitTop] = useState(3)
+    const [limitRecent, setLimitRecent] = useState(3)
     const loadMore = () => {
-        setLimit(limit+3)
+        setLimitTop(limitTop+3)
+    }
+    const loadMoreR = () => {
+        setLimitRecent(limitRecent+3)
     }
     return(
         <div>
@@ -18,12 +22,12 @@ export default function Library({ accessToken, spotifyApi, tracks, recent  }) {
         <div>
             <h3 id="headerTitle">Your favourite songs </h3> 
             <div className="grid-container grid">
-                { tracks && tracks.slice(0,limit ? limit:limit.length).map(track => 
+                { tracks && tracks.slice(0,limitTop ? limitTop:limitTop.length).map(track => 
                     <Link to={`/track/${track.id}`} key={track.id}  className= "grid-item">
                         <DoubleCard imageURL={track.album.images[1].url} itemName={track.name} subItem={track.artists}/>
                     </Link>      
                 )}
-			<button class="fancyButton" onClick={loadMore}> Load More </button>
+			<button class="next" style={{height: "55px"}} onClick={loadMore}> Load More </button>
             </div>
         </div>  
 
@@ -31,7 +35,7 @@ export default function Library({ accessToken, spotifyApi, tracks, recent  }) {
         		<div>
 						<h3 id="headerTitle" >Recently played tracks</h3>
 						<div className="grid-container grid">
-								{recent && recent.slice(0,limit ? limit:limit.length).map(song => 
+								{recent && recent.slice(0,limitRecent ? limitRecent:limitRecent.length).map(song => 
 									<div  key={song.played_at}>
 										<div >
 											<Link to={`/track/${song.track.id}`} className= "grid-item">
@@ -40,10 +44,10 @@ export default function Library({ accessToken, spotifyApi, tracks, recent  }) {
 										</div>		
 									</div>
 								)}
-							<button class="fancyButton" onClick={loadMore}> Load More </button>
+							<button class="next" style={{height: "55px"}} onClick={loadMoreR}> Load More </button>
 					    </div>
 					</div>
-			<Footer/>
+			
       </div>
 			
     )

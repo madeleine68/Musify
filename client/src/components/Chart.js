@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import React , { useState, useEffect } from "react"
 import { LoadingSpinner, Stats } from '../utils'
 import ApexChart from "./ApexChart"
 import ApexChart2 from "./ApexChart2";
@@ -54,7 +54,7 @@ export default function Chart ({ statTrack}) {
             </div>
         )}
            <ApexChart stats={stats} />
-					 <ApexChart2 stats={stats} />
+					 {/* <ApexChart2 stats={stats} /> */}
 					 <div>
 					 <Fade delay={500}>
           <a class="look" href={URL} target="_blank">
