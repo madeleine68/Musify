@@ -1,16 +1,15 @@
-import React from "react";
-
 import { useState, useEffect } from "react"
 import { LoadingSpinner, Stats } from '../utils'
 import ApexChart from "./ApexChart"
-//import MainDisplay from "./MainDisplay";
 import ApexChart2 from "./ApexChart2";
-import Footer from "./Footer"
-//import CardsWrapper from "./Graphs/cardWrapper";
-export default function Chart ({ statTrack}) {
+import Fade from "react-reveal/Fade";
 
-    const [stats, setStats] = useState(null)
+export default function Chart ({ statTrack}) {
+	
+
+  const [stats, setStats] = useState(null)
 	const [loading, setLoading] = useState(false)
+	const URL ="https://www.theverge.com/tldr/2018/2/5/16974194/spotify-recommendation-algorithm-playlist-hack-nelson"
           
     useEffect(() => {
 		const buildStats = () => {
@@ -41,12 +40,13 @@ export default function Chart ({ statTrack}) {
 		return Math.round((statTotal / statTrack.length) * 1000) / 10
 	}
     return (
-        <div>
+      <div>
         {loading ? (
             <LoadingSpinner />
         ) : (
             <div>
 				<h2>Your Vibe, Spotify Stats</h2>
+				
                 {/* {stats !== null && Object.keys(stats).length > 0 ? ( */}
                     {/* // <Stats stats={stats} /> */}
                 {/* // ) : null} */}
@@ -54,8 +54,14 @@ export default function Chart ({ statTrack}) {
         )}
            <ApexChart stats={stats} />
 					 <ApexChart2 stats={stats} />
-
-					 <Footer/>
+					 <div>
+					 <Fade delay={500}>
+          <a class="textCenter flexParent" href={URL} target="_blank">
+                    <button class="next" id="enter"><span>Click here to learn about audio features</span></button>
+                    </a>
+            
+          </Fade>
+					</div>
         </div>
         
     )

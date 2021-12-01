@@ -8,7 +8,7 @@ export default function ApexChart2 ({ stats }) {
     console.log("Object.values is what we need to replace data in series (line 9)", stats)
     // const [data, setData] = useState ()    
 
-    const [category, setCategory] = useState([])
+  const [category, setCategory] = useState([])
   const [data, setData] = useState([])
 
   useEffect(() => {
@@ -40,11 +40,14 @@ export default function ApexChart2 ({ stats }) {
           categories: category
         }
       }} 
+      
       series={[{
         name: 'series-1',
         data: data
       }]} type="line" width={800} height={500} />
+      
     )
+    
 }
 
 
