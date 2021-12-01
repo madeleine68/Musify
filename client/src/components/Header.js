@@ -25,10 +25,11 @@ function Header({ accessToken, spotifyApi }) {
   
     return (
       <Navbar className="me-auto" bg="light" >
-          <Container>  
-           <Navbar.Brand>
+          <Container >  
+           <Navbar.Brand className="d-flex justify-content-right align-items-center" >
                 <Avatar src={user?.images[0]?.url} alt={user?.display_name} />
-                <h5>{user?.display_name}</h5>
+                <br/>
+                <h5 style={{padding: "20px"}}>{user?.display_name}</h5>
             </Navbar.Brand>
           </Container>
           
