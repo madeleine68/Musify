@@ -344,7 +344,15 @@ button:hover {
   background-color: rgba(244, 244, 244, 0.84);
   border-radius: 7px;
 }
-
+.style{
+  text-align: center;
+}
+.text{
+  text-align: center;
+}
+.look{
+  position: relative;
+}
 .definitions {
   display: none;
   padding: 0 1rem 1rem 1rem;

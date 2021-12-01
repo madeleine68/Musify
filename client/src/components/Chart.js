@@ -45,7 +45,8 @@ export default function Chart ({ statTrack}) {
             <LoadingSpinner />
         ) : (
             <div>
-				<h2>Your Vibe, Spotify Stats</h2>
+				<h2 class="text">Your favorite audio features</h2>
+				<h3 class="style">Based on data from your top tracks listened to on Spotify, you prefer these features in a song.</h3>
 				
                 {/* {stats !== null && Object.keys(stats).length > 0 ? ( */}
                     {/* // <Stats stats={stats} /> */}
@@ -56,8 +57,8 @@ export default function Chart ({ statTrack}) {
 					 <ApexChart2 stats={stats} />
 					 <div>
 					 <Fade delay={500}>
-          <a class="textCenter flexParent" href={URL} target="_blank">
-                    <button class="next" id="enter"><span>Click here to learn about audio features</span></button>
+          <a class="look" href={URL} target="_blank">
+                    <button class="next" id="enter">Click here to learn about audio features</button>
                     </a>
             
           </Fade>
