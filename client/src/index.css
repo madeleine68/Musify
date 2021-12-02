@@ -276,6 +276,9 @@ p, ol {
   text-overflow: ellipsis; 
 }
 
+/*.container{
+  background-image: url(./Assets/tic-tac-toe.png);
+}*/
 
 /* // BUTTONS  ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 button {

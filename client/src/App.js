@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import cassette from "./Assets/cassette.gif";
 
 import "bootstrap/dist/css/bootstrap.min.css"
 
@@ -16,6 +17,8 @@ function App() {
   return (
     <div>
          {code ? <Home code={code} /> : <Login />}
+         <div  className="container">
+    </div>
     </div>
     )   
 }
