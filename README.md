@@ -5,6 +5,7 @@ Here is Musify, a React application that communicates with the Spotify API. A we
   <img src="https://user-images.githubusercontent.com/46178706/145465270-de3a1465-ef85-46d9-a1d6-ee02646bb8cf.gif" alt="musify" />
 </p>
 <br />
+
 ### Features
 - Live Search by Songs/Artists
 - Music Player
